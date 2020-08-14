@@ -29,8 +29,7 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points"
   },
-  "dependencies": {
-	    "@angular/compiler-cli": "^9.0.4",
+  "dependencies": {	    
 	"typescript": "3.7.5",
     "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^9.0.4",
