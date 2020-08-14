@@ -82,7 +82,7 @@ export class DatepickerComponent {
   }
 
   ngOnInit() {
-    this.http.get("http://localhost:8000/getTimezoneAll").subscribe(
+    this.http.get("http://phplaravel-456869-1430622.cloudwaysapps.com/getTimezoneAll").subscribe(
       (response) => {
         this.timeZones = response;
         console.log(this.timeZones);
@@ -96,7 +96,7 @@ export class DatepickerComponent {
         console.log(error);
       }
     );
-    this.http.get("http://localhost:8000/getDefaultTZbyIP").subscribe(
+    this.http.get("http://phplaravel-456869-1430622.cloudwaysapps.com/getDefaultTZbyIP").subscribe(
       (response) => {
         console.log(response);
         this.DefaultTZ = response;
@@ -139,7 +139,7 @@ export class DatepickerComponent {
     console.log(this.date_set);
     this.http
       .get(
-        "http://localhost:8000/getSlices/" +
+        "http://phplaravel-456869-1430622.cloudwaysapps.com/getSlices/" +
           this.ex_id +
           "/" +
           this.durationMdl +
@@ -158,7 +158,7 @@ export class DatepickerComponent {
         }
       );
   }
-  // http://localhost:8000/getTimezoneAll
+  // http://phplaravel-456869-1430622.cloudwaysapps.com/getTimezoneAll
 
   reservationSubmit() {
     this.rserveData = {
@@ -172,7 +172,7 @@ export class DatepickerComponent {
     };
     console.log(this.rserveData);
     this.http
-      .post("http://localhost:8000/reservations", this.rserveData)
+      .post("http://phplaravel-456869-1430622.cloudwaysapps.com/reservations", this.rserveData)
       .subscribe(
         (response) => {
           this.showToast(
