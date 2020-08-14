@@ -1,0 +1,56 @@
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Experts Dashboard</h1>
+      <p class="lead text-muted">
+        Thanks for your visit, Kindly navigate through below Experts profiles
+        and choose one
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let exp of experts; let i = index">
+          <div class="card mb-4 shadow-sm">
+            <img
+              class="rg_i Q4LuWd tx8vtf"
+              data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRsWt4qwj6bDKCEYgynFDvE7lSOYlfKT5UPdtacndbcNDgHw6I"
+              data-lt=""
+              jsname="Q4LuWd"
+              style="
+                background-image: url('assets/images/expert.png');
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+              "
+              height="325px"
+            />
+
+            <div class="card-body">
+              <h5 class="card-text text-primary" style="text-align: center;">
+                {{ exp.name }}
+              </h5>
+              <p class="card-text" style="text-align: center;">
+                {{ exp.expert }}
+              </p>
+              <div
+                class="d-flex justify-content-between align-items-left col-md-12"
+              >
+                <div class="btn-group col-md-12">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn btn-success"
+                    (click)="showExpert(exp)"
+                  >
+                    More Info...
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

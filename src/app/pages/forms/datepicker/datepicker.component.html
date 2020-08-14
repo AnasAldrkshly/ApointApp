@@ -1,0 +1,128 @@
+<div class="row">
+  <div class="col-md-12 col-lg-3 col-xxxl-4"></div>
+  <div class="col-md-12 col-lg-6 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Timezone</nb-card-header>
+      <nb-card-body>
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          placeholder="{{ DefaultTZ }}"
+          disabled
+        />
+      </nb-card-body>
+      <nb-card-body>
+        <nb-select
+          (ngModelChange)="setTimeZones($event)"
+          [(ngModel)]="timeZone"
+          style="width: 300px;"
+          placeholder="Choose a time zone"
+        >
+          <nb-option
+            *ngFor="let tz of timeZones; let indexOfelement = index"
+            value="{{ indexOfelement }}"
+          >
+            {{ tz }}
+          </nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Your name</nb-card-header>
+
+      <nb-card-body>
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          placeholder="Your Name"
+          [(ngModel)]="username"
+        />
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Common Datepicker</nb-card-header>
+      <nb-card-body>
+        <input
+          nbInput
+          placeholder="Form Picker"
+          [(ngModel)]="curDate"
+          [nbDatepicker]="formpicker"
+          (dateSelect)="onDateSelect($event)"
+        />
+        <nb-datepicker
+          (dateSelect)="onDateSelect($event)"
+          #formpicker
+        ></nb-datepicker>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Appointment Duration</nb-card-header>
+      <nb-card-body>
+        <nb-select
+          [(ngModel)]="durationMdl"
+          (ngModelChange)="echoDur(date_set)"
+          style="width: 600px;"
+          placeholder="Choose a duration"
+        >
+          <nb-option value="null" disabled>Choose a duration</nb-option>
+          <nb-option value="15">15 Minutes</nb-option>
+          <nb-option value="30">30 Minutes</nb-option>
+          <nb-option value="45">45 Minutes</nb-option>
+          <nb-option value="60">1 Hour</nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>Time Slice</nb-card-header>
+      <nb-card-body>
+        <nb-select
+          (ngModelChange)="getsliceV($event)"
+          [(ngModel)]="timeSlice"
+          style="width: 600px;"
+          placeholder="Choose a time slice"
+        >
+          <nb-option
+            *ngFor="let slic of slices; let indexOfelement = index"
+            value="{{ indexOfelement }}"
+          >
+            {{ slic.from }} - {{ slic.to }}
+          </nb-option>
+        </nb-select>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card *ngIf="timeSlice">
+      <!-- <nb-card-header>
+          Used Fonts
+        </nb-card-header> -->
+      <nb-card-body>
+        <p>
+          Dear <b> {{ username }} </b>,<br />
+          Your appointment will be on <b> {{ curDate | date }} </b> <br />
+          <b> from : </b><i>{{ sliceFrom }}</i> <b> to :</b>
+          <i>{{ sliceTo }}</i>
+        </p>
+      </nb-card-body>
+    </nb-card>
+
+    <div class="col-md-12">
+      <button
+        style="float: right;"
+        _ngcontent-fbf-c372=""
+        nbbutton=""
+        hero=""
+        _nghost-fbf-c96=""
+        ng-reflect-hero=""
+        ng-reflect-status="success"
+        aria-disabled="false"
+        tabindex="0"
+        class="appearance-hero size-medium status-success shape-rectangle ng-star-inserted nb-transition"
+        (click)="reservationSubmit()"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>

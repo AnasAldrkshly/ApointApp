@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-12">
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8 col-md-2">
+            <div class="card">
+              <img src="assets/images/expert.png" alt="" class="card-img-top" />
+              <div class="card-body">
+                <h4 class="card-title text-primary" style="text-align: center;">
+                  {{ ex_name }}
+                </h4>
+                <h5 class="card-text" style="text-align: center;">
+                  {{ ex_expert }}
+                </h5>
+
+                <p class="card-text" style="text-align: center;">
+                  <b> Country : {{ ex_country }} </b>
+                </p>
+
+                <p class="card-text" style="text-align: center;">
+                  <b>Working Hours :{{ ex_from }} ==>{{ ex_to }} </b>
+                </p>
+                <div class="btn-group col-md-12">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn btn-success"
+                    (click)="appoitReserve()"
+                  >
+                    Reserve Appointment..
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
