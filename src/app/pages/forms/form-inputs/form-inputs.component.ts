@@ -31,7 +31,7 @@ export class FormInputsComponent implements OnInit {
   }
 
   getExperts() {
-    this.http.get("http://phplaravel-456869-1430622.cloudwaysapps.com/experts").subscribe(
+    this.http.get("https://phplaravel-456869-1430622.cloudwaysapps.com/experts").subscribe(
       (response) => {
         this.experts = response;
         this.experts = this.experts.data;
